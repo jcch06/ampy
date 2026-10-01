@@ -1,0 +1,84 @@
+# Exemple de réseau industriel - 3 niveaux
+# Transfo 630kVA -> TGBT -> [Motor, TD1] -> Éclairage
+# Régime de neutre TN-S
+
+name: "Installation Industrielle Test"
+
+source:
+  type: transformer
+  name: "Transfo T1"
+  nominal_power_kva: 630
+  voltage_v: 400
+  ucc_percent: 4.0
+  pcu_w: 6500
+  earthing: TN-S
+
+links:
+  - from_node: "Transfo T1"
+    to_node: "TGBT"
+    is_load: false
+    circuit:
+      name: "Liaison Transfo-TGBT"
+      load:
+        current_a: 250
+        voltage_v: 400
+        phases: three_phase
+        cos_phi: 0.85
+      cable:
+        length_m: 5
+        conductor: Cu
+        insulation: XLPE
+      installation:
+        method: F
+
+  - from_node: "TGBT"
+    to_node: "Moteur M1 - 18.5kW"
+    is_load: true
+    circuit:
+      name: "Départ Moteur M1"
+      load:
+        power_kw: 18.5
+        voltage_v: 400
+        phases: three_phase
+        cos_phi: 0.85
+      cable:
+        length_m: 45
+        conductor: Cu
+        insulation: XLPE
+      installation:
+        method: E
+
+  - from_node: "TGBT"
+    to_node: "TD1 Bureau"
+    is_load: false
+    circuit:
+      name: "Départ TD1"
+      load:
+        power_kw: 30
+        voltage_v: 400
+        phases: three_phase
+        cos_phi: 0.85
+      cable:
+        length_m: 50
+        conductor: Cu
+        insulation: XLPE
+      installation:
+        method: C
+
+  - from_node: "TD1 Bureau"
+    to_node: "Éclairage Bureau"
+    is_load: true
+    circuit:
+      name: "Départ Éclairage"
+      load:
+        power_kw: 3.68
+        voltage_v: 230
+        phases: single_phase
+        cos_phi: 1.0
+      cable:
+        length_m: 35
+        conductor: Cu
+        insulation: PVC
+      installation:
+        method: B
+      du_max_percent: 3.0

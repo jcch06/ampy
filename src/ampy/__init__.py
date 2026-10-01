@@ -1,0 +1,82 @@
+"""
+ampy - Industrial electrical cable sizing calculation engine.
+Conforming strictly to NF C 15-100 & UTE C 15-105.
+"""
+
+from ampy.core.engine import SizingEngine
+from ampy.core.formulas import (
+    calculate_harmonic_derating,
+    calculate_ib,
+    calculate_k3_temp_factor,
+    calculate_sin_phi,
+    calculate_thermal_stress,
+    calculate_thermal_stress_min_section,
+    calculate_voltage_drop,
+    get_conductor_resistivity,
+    get_linear_reactance,
+)
+from ampy.core.models import (
+    CableSpecs,
+    CircuitDefinition,
+    ConductorMaterial,
+    ElectricalLoad,
+    InstallationConditions,
+    InstallationMethod,
+    InsulationType,
+    IntermediateFactors,
+    LimitingConstraint,
+    PhaseSystem,
+    ProtectionDevice,
+    SizingResult,
+    ThermalStressResult,
+    VoltageDropResult,
+)
+from ampy.core.tables import (
+    STANDARD_IN_RATINGS,
+    STANDARD_SECTIONS,
+    get_k1_factor,
+    get_k2_factor,
+    get_k3_factor,
+    get_next_standard_in,
+    get_next_standard_section,
+    get_reference_current_i0,
+    get_sections_for_material,
+)
+
+__version__ = "0.1.0"
+
+__all__ = [
+    "CableSpecs",
+    "CircuitDefinition",
+    "ConductorMaterial",
+    "ElectricalLoad",
+    "InstallationConditions",
+    "InstallationMethod",
+    "InsulationType",
+    "IntermediateFactors",
+    "LimitingConstraint",
+    "PhaseSystem",
+    "ProtectionDevice",
+    "STANDARD_IN_RATINGS",
+    "STANDARD_SECTIONS",
+    "SizingEngine",
+    "SizingResult",
+    "ThermalStressResult",
+    "VoltageDropResult",
+    "calculate_harmonic_derating",
+    "calculate_ib",
+    "calculate_k3_temp_factor",
+    "calculate_sin_phi",
+    "calculate_thermal_stress",
+    "calculate_thermal_stress_min_section",
+    "calculate_voltage_drop",
+    "get_conductor_resistivity",
+    "get_k1_factor",
+    "get_k2_factor",
+    "get_k3_factor",
+    "get_linear_reactance",
+    "get_next_standard_in",
+    "get_next_standard_section",
+    "get_reference_current_i0",
+    "get_sections_for_material",
+]

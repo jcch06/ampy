@@ -1,0 +1,23 @@
+# Exemple de configuration circuit - BENCH-01
+# Moteur industriel triphasé 18.5 kW
+# Méthode de pose E (chemin de câbles perforé), XLPE, Cuivre, 45m
+
+name: "Moteur M1 - 18.5 kW"
+
+load:
+  power_kw: 18.5
+  voltage_v: 400
+  phases: three_phase
+  cos_phi: 0.85
+
+cable:
+  length_m: 45
+  conductor: Cu
+  insulation: XLPE
+
+installation:
+  method: E
+  ambient_temp_c: 30
+  grouping_circuits: 1
+
+du_max_percent: 5.0

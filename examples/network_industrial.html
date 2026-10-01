@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Note de Calcul - Installation Industrielle Test</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 40px; color: #333; }
+        h1 { border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; font-weight: 600; }
+        tr:nth-child(even) { background-color: #fcfcfc; }
+        .success { color: #27ae60; font-weight: bold; }
+        .warning { color: #e67e22; font-weight: bold; }
+        .error { color: #e74c3c; font-weight: bold; }
+        .metadata { margin-bottom: 30px; padding: 15px; background: #f8f9fa; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Note de Calcul Électrique</h1>
+    
+    <div class="metadata">
+        <p><strong>Installation :</strong> Installation Industrielle Test</p>
+        <p><strong>Source :</strong> Transfo T1 (Ik3 = 22.73 kA)</p>
+        <p><strong>Conformité Globale :</strong> <span class="success">
+            CONFORME</span>
+        </p>
+    </div>
+
+    <h2>Résultats par circuit</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nœud / Départ</th>
+                <th>Câble S/N/PE (mm²)</th>
+                <th>Disjoncteur</th>
+                <th>Sélectivité</th>
+                <th>Ik3 max (kA)</th>
+                <th>Ik1 min (A)</th>
+                <th>ΔU Cumul (%)</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><strong>TGBT</strong></td>
+                <td>70 / 35 / 35</td>
+                <td>MCCB-TM250D-36kA<br><small>(36.0kA)</small></td>
+                <td>-</td>
+                <td>20.9</td>
+                <td>16843</td>
+                <td>0.17</td>
+                <td>✅</td>
+            </tr>
+
+            <tr>
+                <td><strong>Moteur M1 - 18.5kW</strong></td>
+                <td>4 / 4 / 4</td>
+                <td>MCCB-TM32D-36kA<br><small>(36.0kA)</small></td>
+                <td><span class='success'>TOTALE</span></td>
+                <td>0.9</td>
+                <td>418</td>
+                <td>3.20</td>
+                <td>✅</td>
+            </tr>
+
+            <tr>
+                <td><strong>TD1 Bureau</strong></td>
+                <td>10 / 10 / 10</td>
+                <td>MCCB-TM63D-36kA<br><small>(36.0kA)</small></td>
+                <td><span class='success'>TOTALE</span></td>
+                <td>1.9</td>
+                <td>921</td>
+                <td>2.39</td>
+                <td>✅</td>
+            </tr>
+
+            <tr>
+                <td><strong>Éclairage Bureau</strong></td>
+                <td>4 / 4 / 4</td>
+                <td>MCB-16A-CourbeC-10kA<br><small>(10.0kA)</small></td>
+                <td><span class='warning'>PARTIELLE<br><small>(&lt;0.6kA)</small></span></td>
+                <td>0.7</td>
+                <td>342</td>
+                <td>5.19</td>
+                <td>✅</td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>
